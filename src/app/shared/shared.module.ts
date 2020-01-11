@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutPrimaryPage } from './layout-primary/layout-primary.page';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { LayoutPrimaryComponent } from './layout-primary/layout-primary.component';
 
 
 
 @NgModule({
-  declarations: [LayoutPrimaryPage],
+  declarations: [LayoutPrimaryComponent],
   imports: [
     CommonModule,
     RouterModule,
+    IonicModule,
     ReactiveFormsModule
   ]
 })
