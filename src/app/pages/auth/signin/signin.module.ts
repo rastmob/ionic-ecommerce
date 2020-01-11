@@ -7,13 +7,23 @@ import { IonicModule } from '@ionic/angular';
 import { SigninPageRoutingModule } from './signin-routing.module';
 
 import { SigninPage } from './signin.page';
-
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
+const routes: Routes = [
+  {
+    path: '',
+    component: SigninPage
+  }
+];
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SigninPageRoutingModule
+    SigninPageRoutingModule,   
+    SharedModule,
+    RouterModule.forChild(routes),
+    
   ],
   declarations: [SigninPage]
 })

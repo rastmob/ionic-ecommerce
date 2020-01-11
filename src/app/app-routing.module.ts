@@ -5,7 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'signin',
     loadChildren: () => import('./pages/auth/signin/signin.module').then( m => m.SigninPageModule)
   },
@@ -16,7 +17,8 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./pages/auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
-  }
+  },
+  
 
 ];
 @NgModule({
