@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { LayoutPrimaryComponent } from './layout-primary/layout-primary.component';
 import { AngularFireModule } from "@angular/fire";
@@ -15,6 +15,7 @@ import { environment } from '../../environments/environment';
     CommonModule,
     RouterModule,
     IonicModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
