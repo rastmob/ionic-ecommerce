@@ -4,7 +4,9 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { LayoutPrimaryComponent } from './layout-primary/layout-primary.component';
-
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment } from '../../environments/environment';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { LayoutPrimaryComponent } from './layout-primary/layout-primary.componen
     CommonModule,
     RouterModule,
     IonicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ]
 })
 export class SharedModule { }
