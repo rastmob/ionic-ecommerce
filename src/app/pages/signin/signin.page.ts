@@ -9,10 +9,13 @@ import { Router } from '@angular/router';
 })
 export class SigninPage implements OnInit {
 
+  user = {
+    email: '',
+    password: ''
+  };
 
   constructor(private authService: AuthService, private router: Router) {
   }
-
 
   ngOnInit() {
   }
@@ -41,5 +44,26 @@ export class SigninPage implements OnInit {
         })
       .catch((err) => console.log(err));
     }
+
+    signInWithGithub() {
+      this.authService.signInWithGithub()
+      .then((res) => {
+          this.router.navigate(['my-profile'])
+        })
+      .catch((err) => console.log(err));
+    }
+
+    signInWithEmail() {
+
+      this.authService.signInRegular(this.user.email, this.user.password)
+        .then((res) => {
+          console.log(res);
+          this.router.navigate(['my-profile']);
+        })
+        .catch((err) => console.log('error: ' + err));
+    }
+
+
+
 
 }
