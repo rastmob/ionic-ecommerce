@@ -14,16 +14,16 @@
       <ion-card-content>
         <form name="userform" method="post" #formController="ngForm" style="height:500px;">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label>Email address</label>
             <input type="email" class="form-control" [(ngModel)]="user.email" name="email" placeholder="Email" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label>Password</label>
             <input type="password" class="form-control" [(ngModel)]="user.password" name="password" placeholder="Password" required>
           </div>
 
           <div class="form-group">
-              <button type="buton" class="btn btn-primary btn-block" style="margin-bottom: 20px" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">
+              <button type="buton" class="btn btn-primary btn-block" style="margin-bottom: 10px" (click)="signInWithEmail()" [disabled]="formController.form.invalid">
                 Login with Email
               </button>
           </div>

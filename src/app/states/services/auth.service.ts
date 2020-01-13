@@ -9,18 +9,17 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   private user: Observable<firebase.User>;
-  private userDetails: firebase.User = null;
+  private userData: firebase.User = null;
 
-  constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
-      this.user = _firebaseAuth.authState;
-
+  constructor(private angularFireAuth: AngularFireAuth, private router: Router) {
+      this.user = angularFireAuth.authState;
       this.user.subscribe(
         (user) => {
           if (user) {
-            this.userDetails = user;
-            console.log(this.userDetails);
+            this.userData = user;
+            console.log(this.userData);
           } else {
-            this.userDetails = null;
+            this.userData = null;
           }
         }
       );
@@ -29,13 +28,13 @@ export class AuthService {
 
   /*
   signInWithFacebook() {
-    return this._firebaseAuth.auth.signInWithPopup(
+    return this.angularFireAuth.auth.signInWithPopup(
       new firebase.auth.FacebookAuthProvider()
     )
   }
 
   signInWithTwitter() {
-    return this._firebaseAuth.auth.signInWithPopup(
+    return this.angularFireAuth.auth.signInWithPopup(
       new firebase.auth.TwitterAuthProvider()
     )
   }
@@ -43,13 +42,13 @@ export class AuthService {
 
   
   signInWithGoogle() {
-    return this._firebaseAuth.auth.signInWithPopup(
+    return this.angularFireAuth.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
     )
   }
 
   signInWithGithub() {
-    return this._firebaseAuth.auth.signInWithPopup(
+    return this.angularFireAuth.auth.signInWithPopup(
       new firebase.auth.GithubAuthProvider()
     )
   }
@@ -57,12 +56,12 @@ export class AuthService {
   signInRegular(email, password) {
     const credential = firebase.auth.EmailAuthProvider.credential( email, password );
 
-    return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password)
+    return this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
   }
 
 
   isLoggedIn() {
-  if (this.userDetails == null ) {
+  if (this.userData == null ) {
       return false;
     } else {
       return true;
@@ -71,7 +70,7 @@ export class AuthService {
 
 
   logout() {
-    this._firebaseAuth.auth.signOut()
-    .then((res) => this.router.navigate(['/']));
+    this.angularFireAuth.auth.signOut()
+    .then((res) => this.router.navigate(['/signin']));
   }
 }
