@@ -19,7 +19,7 @@ export class SigninPage implements OnInit {
 
   ngOnInit() {
   }
-   signInWithTwitter() {
+   /* signInWithTwitter() {
       this.authService.signInWithTwitter()
       .then((res) => { 
           this.router.navigate(['my-profile'])
@@ -34,7 +34,7 @@ export class SigninPage implements OnInit {
           this.router.navigate(['my-profile'])
         })
       .catch((err) => console.log(err));
-    }
+    } */
 
 
     signInWithGoogle() {

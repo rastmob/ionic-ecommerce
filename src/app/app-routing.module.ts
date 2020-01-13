@@ -5,7 +5,7 @@ import { DummyComponent } from './components/dummy/dummy.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./pages/signin/signin.module').then(m => m.SigninPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { path: 'auth', component: DummyComponent, loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule) },
   {
@@ -19,10 +19,6 @@ const routes: Routes = [
   {
     path: 'signin',
     loadChildren: () => import('./pages/signin/signin.module').then( m => m.SigninPageModule)
-  },
-  {
-    path: 'category',
-    loadChildren: () => import('./pages/category/category.module').then( m => m.CategoryPageModule)
   },
   {
     path: 'product',

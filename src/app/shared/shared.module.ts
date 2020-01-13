@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { LayoutPrimaryComponent } from './layout-primary/layout-primary.component';
+import { ProgressLoaderComponent } from './progress-loader/progress-loader.component';
 
 
 
 @NgModule({
-  declarations: [LayoutPrimaryComponent],
+  declarations: [LayoutPrimaryComponent, ProgressLoaderComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -17,7 +18,8 @@ import { LayoutPrimaryComponent } from './layout-primary/layout-primary.componen
     ReactiveFormsModule,
   ], exports : [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProgressLoaderComponent
   ]
 })
 export class SharedModule { }

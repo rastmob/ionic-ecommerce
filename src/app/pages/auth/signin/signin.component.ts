@@ -17,32 +17,7 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
   }
-   signInWithTwitter() {
-      this.authService.signInWithTwitter()
-      .then((res) => { 
-          this.router.navigate(['my-profile'])
-        })
-      .catch((err) => console.log(err));
-    }
-
-
-    signInWithFacebook() {
-      this.authService.signInWithFacebook()
-      .then((res) => {
-          this.router.navigate(['my-profile'])
-        })
-      .catch((err) => console.log(err));
-    }
-
-
-    signInWithGoogle() {
-      this.authService.signInWithGoogle()
-      .then((res) => {
-          this.router.navigate(['my-profile'])
-        })
-      .catch((err) => console.log(err));
-    }
-
+  
 
 
 
