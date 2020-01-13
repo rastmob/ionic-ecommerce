@@ -1,49 +1,53 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from "@angular/fire/auth";
 import { Observable } from 'rxjs';
-
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  userData: Observable<firebase.User>;
-
-  constructor(private angularFireAuth: AngularFireAuth) {
-    this.userData = angularFireAuth.authState;
+  private user: Observable<firebase.User>;
+  private userDetails: firebase.User = null;
+constructor(private _firebaseAuth: AngularFireAuth, private router: Router) { 
+      this.user = _firebaseAuth.authState;
+this.user.subscribe(
+        (user) => {
+          if (user) {
+            this.userDetails = user;
+            console.log(this.userDetails);
+          }
+          else {
+            this.userDetails = null;
+          }
+        }
+      );
   }
-
-  /* Sign up */
-  SignUp(email: string, password: string) {
-    this.angularFireAuth
-      .auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(res => {
-        console.log('Successfully signed up!', res);
-      })
-      .catch(error => {
-        console.log('Something is wrong:', error.message);
-      });    
+signInWithTwitter() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.TwitterAuthProvider()
+    )
   }
-
-  /* Sign in */
-  SignIn(email: string, password: string) {
-    this.angularFireAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(res => {
-        console.log('Successfully signed in!');
-      })
-      .catch(err => {
-        console.log('Something is wrong:',err.message);
-      });
+signInWithFacebook() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.FacebookAuthProvider()
+    )
   }
-
-  /* Sign out */
-  SignOut() {
-    this.angularFireAuth
-      .auth
-      .signOut();
-  }  
-
+signInWithGoogle() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    )
+  }
+isLoggedIn() {
+  if (this.userDetails == null ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+logout() {
+    this._firebaseAuth.auth.signOut()
+    .then((res) => this.router.navigate(['/']));
+  }
 }

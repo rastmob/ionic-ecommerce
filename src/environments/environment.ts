@@ -4,15 +4,16 @@
 
 export const environment = {
   production: false,
-  firebaseConfig: {
-    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    authDomain: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    databaseURL: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    projectId: "xxxxxxxxxxxxx",
-    storageBucket: "xxxxxxxxxxxxxxx",
-    messagingSenderId: "xxxxxxxxxxxxxx",
-    appId: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  }
+  firebase: {
+    apiKey: "AIzaSyDL5JvZk1tOHfFme7YAPwsXU2_S4wir7gY",
+    authDomain: "ionic-ecommerce-681ae.firebaseapp.com",
+    databaseURL: "https://ionic-ecommerce-681ae.firebaseio.com",
+    projectId: "ionic-ecommerce-681ae",
+    storageBucket: "ionic-ecommerce-681ae.appspot.com",
+    messagingSenderId: "554924010215",
+    appId: "1:554924010215:web:91a47f567a87e6cab35042",
+    measurementId: "G-4TVQPNC5M1"
+ }
 };
 
 /*
