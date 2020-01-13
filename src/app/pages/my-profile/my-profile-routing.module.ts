@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: MyProfilePage
+  },
+  {
+    path: 'address',
+    loadChildren: () => import('./address/address.module').then( m => m.AddressPageModule)
+  },
+  {
+    path: 'favourite',
+    loadChildren: () => import('./favourite/favourite.module').then( m => m.FavouritePageModule)
   }
 ];
 
