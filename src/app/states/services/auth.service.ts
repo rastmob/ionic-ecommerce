@@ -27,19 +27,21 @@ export class AuthService {
   }
 
 
-  signInWithTwitter() {
-    return this._firebaseAuth.auth.signInWithPopup(
-      new firebase.auth.TwitterAuthProvider()
-    )
-  }
-
-
+  /*
   signInWithFacebook() {
     return this._firebaseAuth.auth.signInWithPopup(
       new firebase.auth.FacebookAuthProvider()
     )
   }
 
+  signInWithTwitter() {
+    return this._firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.TwitterAuthProvider()
+    )
+  }
+*/
+
+  
   signInWithGoogle() {
     return this._firebaseAuth.auth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()

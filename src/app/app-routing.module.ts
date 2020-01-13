@@ -5,7 +5,7 @@ import { DummyComponent } from './components/dummy/dummy.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./pages/signin/signin.module').then(m => m.SigninPageModule)
   },
   { path: 'auth', component: DummyComponent, loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule) },
   {
