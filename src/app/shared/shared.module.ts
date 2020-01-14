@@ -5,11 +5,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { LayoutPrimaryComponent } from './layout-primary/layout-primary.component';
 import { ProgressLoaderComponent } from './progress-loader/progress-loader.component';
+import { MediaSkeletonComponent } from './media-skeleton/media-skeleton.component';
 
 
 
 @NgModule({
-  declarations: [LayoutPrimaryComponent, ProgressLoaderComponent],
+  declarations: [LayoutPrimaryComponent, ProgressLoaderComponent, MediaSkeletonComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -19,7 +20,8 @@ import { ProgressLoaderComponent } from './progress-loader/progress-loader.compo
   ], exports : [
     FormsModule,
     ReactiveFormsModule,
-    ProgressLoaderComponent
+    ProgressLoaderComponent,
+    MediaSkeletonComponent
   ]
 })
 export class SharedModule { }

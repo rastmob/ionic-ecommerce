@@ -6,4 +6,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <app-progress-loader [numberOfRows]="6" *ngIf="!items"></app-progress-loader>
+
+</ion-content>

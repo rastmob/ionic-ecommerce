@@ -22,21 +22,20 @@ export class SearchPage implements OnInit {
 
  initializeItems(){
   this.categories = [
-    'Clothing',
-    'Shoes',
+    'Mobile Phones',
+    'Laptops',
+    'Computer Components',
+    'Smart Electronics',
+    'Portable Audio & Video',
     'Consumer Electronics',
-    'Books',
-    'Cosmetics & Body care',
-    'Food & Drinks',
-    'Furniture',
-    'Sports & Outdoor',
-    'Toys',
-    'Baby Products',
-    'Garden & pets',
-    'Shoes',
+    'Games & Accessories',
+    'Hot Brands',
+    'Video Games',
+    'Audio & Video Equipments',
+    'Mobile Phone Accessories',
+    'iPhone Accessories',
+    'Laptops',
     'Consumer Electronics',
-    'Sports & Outdoor',
-    'Cosmetics & Body care',
 ];
 }
 
