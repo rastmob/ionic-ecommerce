@@ -40,7 +40,7 @@ export class SigninPage implements OnInit {
     signInWithGoogle() {
       this.authService.signInWithGoogle()
       .then((res) => {
-          this.router.navigate(['my-profile'])
+          this.router.navigate(['tabs'])
         })
       .catch((err) => console.log(err));
     }

@@ -5,5 +5,19 @@
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+  
+    <div class="jumbotron">
+      <h1>{{ authService.userData?.displayName }} <img [src]="authService.userData?.photoURL" height="80" class="mx-auto d-block rounded" [alt]="authService.userData?.displayName">
+      </h1>
+      <br />
+      <p> Welcome to Profile Page.</p>
+      <p> email : {{ authService.userData?.email }} </p>
+    
+      <p *ngIf="authService.isLoggedIn()">
+        <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Logout</a>
+      </p>
+    </div>
+  
+  </div> <!-- /container -->
 </ion-content>
