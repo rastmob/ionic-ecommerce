@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>search</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-progress-loader [numberOfRows]="8" *ngIf="!categories"></app-progress-loader>
+  <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+  <ion-list>
+    <ion-item-sliding *ngFor="let category of categories">
+        <ion-item>
+            {{category}}
+        </ion-item>
+        <ion-item-options>
+            <button ion-button icon-only (click)="addToCard(category)">
+                <ion-icon name="cart" color="primary"></ion-icon>
+            </button>
+            <button ion-button icon-only (click)="viewDetail(category)">
+                <ion-icon name="paper" color="secondary"></ion-icon>
+            </button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+</ion-list>
+</ion-content>
