@@ -12,6 +12,7 @@ export class Tab1Page implements  OnInit {
     'S',
     'M',
     'L',
+    'X'
   ];
 
   

@@ -20,6 +20,15 @@
         </ion-slide>
     </ion-slides>
   </ion-card>
-    
+
     <p class="productTitle">{{productDetail.name}}</p>
+
+
+    <ul>
+      <li *ngFor="let size of itemSizes;">
+        {{size}}
+      </li>
+    </ul>
+    <p>{{productDetail.description}}</p>
+    <iframe height="315" src="https://www.youtube.com/embed/Q_EwuVHDb5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </ion-content>
