@@ -79,10 +79,10 @@
 <ion-footer>
   <ion-row class="ion-text-center">
     <ion-col size="6" class="ion-no-padding">
-      <ion-button expand="full" color="primary" (click)="addToCart(detail)">Add to Cart</ion-button>
+      <ion-button expand="full" color="primary" (click)="addToCart(productDetail.id)">Add to Cart</ion-button>
     </ion-col>
     <ion-col size="6" class="ion-no-padding">
-      <ion-button expand="full" color="secondary" (click)="buy(detail)">Buy Now</ion-button>
+      <ion-button expand="full" color="secondary" (click)="buyNow(productDetail.id)">Buy Now</ion-button>
     </ion-col>
   </ion-row>
 </ion-footer>

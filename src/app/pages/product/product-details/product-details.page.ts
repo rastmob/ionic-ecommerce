@@ -54,4 +54,12 @@ export class ProductDetailsPage implements OnInit {
     this.content.scrollToTop(1500);
   }
 
+  addToCart(){
+
+  }
+
+  buyNow(){
+    
+  }
+
 }
