@@ -21,14 +21,31 @@
     </ion-slides>
   </ion-card>
 
-    <p class="productTitle">{{productDetail.name}}</p>
-
-
-    <ul>
-      <li *ngFor="let size of itemSizes;">
-        {{size}}
-      </li>
-    </ul>
-    <p>{{productDetail.description}}</p>
-    <iframe height="315" src="https://www.youtube.com/embed/Q_EwuVHDb5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>{{productDetail.name}}</ion-card-subtitle>
+    </ion-card-header>
+   <ion-card-content>    
+     <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Select Size</ion-label>
+      </ion-list-header>
+  
+      <ion-item *ngFor="let size of itemSizes;">
+        <ion-label>    {{size}}  </ion-label>
+        <ion-radio [value]="size" checked></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-card-content>
+ </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Description</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>{{productDetail.description}}</ion-card-content>
+  </ion-card>
+    
+  
 </ion-content>
