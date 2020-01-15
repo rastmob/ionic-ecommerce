@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-product-details',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-details.page.scss'],
 })
 export class ProductDetailsPage implements OnInit {
+  @ViewChild(IonContent) content: IonContent;
 
+  
   productDetail =
     {
       id:6,
@@ -45,6 +48,10 @@ export class ProductDetailsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  scrollToTop(){
+    this.content.scrollToTop(1500);
   }
 
 }

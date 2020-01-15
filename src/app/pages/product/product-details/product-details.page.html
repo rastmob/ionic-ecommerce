@@ -69,6 +69,11 @@
     <ion-card-content>{{productDetail.description}}</ion-card-content>
   </ion-card>
 
+    <ion-fab>
+      <ion-fab-button  (click)="scrollToTop()">
+        <ion-icon name="arrow-dropup"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 
 </ion-content>
 <ion-footer>
@@ -81,3 +86,4 @@
     </ion-col>
   </ion-row>
 </ion-footer>
+
