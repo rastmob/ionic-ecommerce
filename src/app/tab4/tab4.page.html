@@ -7,7 +7,7 @@
 <ion-content>
   <div class="container">
     <app-progress-loader [numberOfRows]="6" *ngIf="!authService.userData?.photoURL"></app-progress-loader>
-    <div class="jumbotron">
+    <div class="jumbotron" *ngIf="authService.userData?.photoURL">
       <h1>{{ authService.userData?.displayName }} <img [src]="authService.userData?.photoURL" height="80" class="mx-auto d-block rounded" [alt]="authService.userData?.displayName">
       </h1>
       <br />
