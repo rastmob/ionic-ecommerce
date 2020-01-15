@@ -9,9 +9,10 @@ const routes: Routes = [
     component: ProductPage
   },
   {
-    path: 'product-details',
+    path: 'product-details/:id',
     loadChildren: () => import('./product-details/product-details.module').then( m => m.ProductDetailsPageModule)
-  }
+  },
+  
 ];
 
 @NgModule({

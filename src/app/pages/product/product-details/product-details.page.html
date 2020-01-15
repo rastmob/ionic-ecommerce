@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>product-details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>{{productDetail.name}}</ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card class="welcome-card">
 
+    <app-media-skeleton *ngIf="!productDetail.imgUrl" class="slide-skeleton"></app-media-skeleton>
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let product of productDetail.imgUrl">
+   
+            <img [src]="product.imgSrc"/>
+        </ion-slide>
+    </ion-slides>
+  </ion-card>
+    
+    <p class="productTitle">{{productDetail.name}}</p>
 </ion-content>

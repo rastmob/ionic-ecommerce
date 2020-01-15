@@ -79,7 +79,7 @@ export class Tab1Page implements  OnInit {
       id:3,
       imgUrl: "https://inews.co.uk/images-i.jpimedia.uk/imagefetch/https://inews.co.uk/wp-content/uploads/2019/07/best-clothes-subscription-boxes.png?width=640",
     },
-  ]
+  ];
 
   constructor(){
 

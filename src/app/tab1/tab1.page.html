@@ -24,7 +24,7 @@
       <app-media-skeleton *ngIf="!slides" class="slide-skeleton"></app-media-skeleton>
       <ion-slides pager="true">
           <ion-slide *ngFor="let slide of slides">
-              <img [src]="slide?.imgUrl" height="200"/>
+              <img [src]="slide?.imgUrl"/>
           </ion-slide>
       </ion-slides>
     </ion-card>
@@ -35,7 +35,7 @@
  <app-progress-loader [numberOfRows]="6" *ngIf="!items"></app-progress-loader>
  <div class="container">
  <ion-row class="row">
- <ion-col size="4" *ngFor="let item of items;let i=index" routerLink="/pages/product/{{item?.id}}">
+ <ion-col size="4" *ngFor="let item of items;let i=index" routerLink="/product/product-details/{{item?.id}}">
 <div>
 <ion-card class="ion-no-padding ion-no-margin">
   <app-media-skeleton [src]="item?.imgUrl" [className]="animationClass"  [ngStyle]="{'animation-delay':(i + 1) * 0.2+'s'}"
