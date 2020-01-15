@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonContent } from '@ionic/angular';
+import { StorageService } from 'src/app/states/services/storage.service';
 
 @Component({
   selector: 'app-product-details',
@@ -45,7 +46,7 @@ export class ProductDetailsPage implements OnInit {
     'Grey'
   ]
 
-  constructor() { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit() {
   }
@@ -54,8 +55,8 @@ export class ProductDetailsPage implements OnInit {
     this.content.scrollToTop(1500);
   }
 
-  addToCart(){
-
+  addToCart(productId){
+    this.storageService.addToCart(productId);
   }
 
   buyNow(){
