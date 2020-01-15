@@ -8,7 +8,7 @@ import { StorageService } from 'src/app/states/services/storage.service';
   styleUrls: ['./product-details.page.scss'],
 })
 export class ProductDetailsPage implements OnInit {
-  @ViewChild(IonContent) content: IonContent;
+  // @ViewChild(IonContent, true) content: IonContent;
 
   
   productDetail =
@@ -52,7 +52,7 @@ export class ProductDetailsPage implements OnInit {
   }
 
   scrollToTop(){
-    this.content.scrollToTop(1500);
+    // this.content.scrollToTop(1500);
   }
 
   addToCart(productId){
