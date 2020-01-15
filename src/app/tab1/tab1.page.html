@@ -21,11 +21,16 @@
 <ion-content>
 
     <ion-card class="welcome-card">
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>eCommerce</ion-card-title>
-      </ion-card-header>
+      <app-media-skeleton *ngIf="!slides" class="slide-skeleton"></app-media-skeleton>
+      <ion-slides pager="true">
+          <ion-slide *ngFor="let slide of slides">
+              <img [src]="slide?.imgUrl" height="200"/>
+          </ion-slide>
+      </ion-slides>
     </ion-card>
+
+
+
 
  <app-progress-loader [numberOfRows]="6" *ngIf="!items"></app-progress-loader>
  <div class="container">
