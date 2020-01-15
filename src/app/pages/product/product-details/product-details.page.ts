@@ -35,6 +35,13 @@ export class ProductDetailsPage implements OnInit {
     'X'
   ];
 
+  colors = [
+    'Red',
+    'Blue',
+    'Yellow',
+    'Grey'
+  ]
+
   constructor() { }
 
   ngOnInit() {

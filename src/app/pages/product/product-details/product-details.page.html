@@ -5,7 +5,7 @@
     </ion-buttons>
 
     <ion-title>{{productDetail.name}}</ion-title>
-    
+
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +14,10 @@
 
     <app-media-skeleton *ngIf="!productDetail.imgUrl" class="slide-skeleton"></app-media-skeleton>
     <ion-slides pager="true">
-        <ion-slide *ngFor="let product of productDetail.imgUrl">
-   
-            <img [src]="product.imgSrc"/>
-        </ion-slide>
+      <ion-slide *ngFor="let product of productDetail.imgUrl">
+
+        <img [src]="product.imgSrc" />
+      </ion-slide>
     </ion-slides>
   </ion-card>
 
@@ -25,27 +25,59 @@
     <ion-card-header>
       <ion-card-subtitle>{{productDetail.name}}</ion-card-subtitle>
     </ion-card-header>
-   <ion-card-content>    
-     <ion-list>
-    <ion-radio-group>
-      <ion-list-header>
-        <ion-label>Select Size</ion-label>
-      </ion-list-header>
-  
-      <ion-item *ngFor="let size of itemSizes;">
-        <ion-label>    {{size}}  </ion-label>
-        <ion-radio [value]="size" checked></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
-</ion-card-content>
- </ion-card>
+    <ion-row class="ion-text-center">
+      <ion-col size="6" class="ion-no-padding">
+        <ion-card-content>
+          <ion-list>
+            <ion-radio-group>
+              <ion-list-header>
+                <ion-label>Select Size</ion-label>
+              </ion-list-header>
+
+              <ion-item *ngFor="let size of itemSizes;">
+                <ion-label> {{size}} </ion-label>
+                <ion-radio [value]="size" checked></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-col>
+      <ion-col size="6" class="ion-no-padding">
+        <ion-card-content>
+          <ion-list>
+            <ion-radio-group>
+              <ion-list-header>
+                <ion-label>Select Color</ion-label>
+              </ion-list-header>
+
+              <ion-item *ngFor="let color of colors;">
+                <ion-label> {{color}} </ion-label>
+                <ion-radio [value]="color" checked></ion-radio>
+              </ion-item>
+            </ion-radio-group>
+          </ion-list>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
   <ion-card class="welcome-card">
     <ion-card-header>
       <ion-card-subtitle>Description</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>{{productDetail.description}}</ion-card-content>
   </ion-card>
-    
-  
+
+
 </ion-content>
+<ion-footer>
+  <ion-row class="ion-text-center">
+    <ion-col size="6" class="ion-no-padding">
+      <ion-button expand="full" color="primary" (click)="addToCart(detail)">Add to Cart</ion-button>
+    </ion-col>
+    <ion-col size="6" class="ion-no-padding">
+      <ion-button expand="full" color="secondary" (click)="buy(detail)">Buy Now</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
