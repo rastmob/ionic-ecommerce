@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../states/services/product.service';
 
 @Component({
   selector: 'app-tab1',
@@ -22,7 +23,7 @@ export class Tab1Page implements  OnInit {
     categoryId:1,
     price:14.99,
   }, 
-];
+  ];
 
 
   itemSizes = [
@@ -39,60 +40,8 @@ export class Tab1Page implements  OnInit {
       'Books',
   ];
   
-
-   // video : 1 https://video.asos-media.com/products/test-desc/13557437-catwalk-AVS.m3u8
-   // video2 : https://video.asos-media.com/products/test-desc/13713467-catwalk-AVS.m3u8
-   // video3: https://video.asos-media.com/products/test-desc/12732001-catwalk-AVS.m3u8
    
-  items = [
-  {
-    id:1,
-    name: "DESIGN super fluffy yarn co-ord in Stone",
-    imgUrl: "/assets/1-2.jfif",
-    categoryId:1,
-    price:14.99,
-  }, 
-  {
-    id:2,
-    name: "Lounge premium knitted jumper and wide leg trouser with splits",
-    imgUrl: "/assets/2-2.jfif",
-    categoryId:1,
-    price:18.99,
-
-  }, 
-  {
-    id:3,
-    name: "Maternity lounge off shoulder sweat & over the bump legging set",
-    imgUrl: "/assets/3-2.jfif",
-    categoryId:1,
-    price:11.99,
-
-  }, 
-  {
-    id:4,
-    name: "Satin animal tape bomber jacket & jogger",
-    imgUrl: "/assets/4-2.jfif",
-    categoryId:1,
-    price:122.99,
-
-  }, 
-  {
-    id:5,
-    name: "Vesper cross back midi dress in black",
-    imgUrl: "/assets/5-1.jfif",
-    categoryId:1,
-    price:74.66,
-
-  }, 
-  {
-    id:6,
-    name: "Neon boucle suit",
-    imgUrl: "/assets/6-2.jfif",
-    categoryId:1,
-    price:33.99,
-
-  }, 
-  ];
+  items:any=[];
 
   slides = [
     {
@@ -109,13 +58,15 @@ export class Tab1Page implements  OnInit {
     },
   ];
 
-  constructor(){
+  constructor(private productService:ProductService){
 
   }
   
 
   ngOnInit(){
 
+
+   this.items = this.productService.getAllProducts();
    
 
   }

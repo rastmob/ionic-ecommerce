@@ -17,12 +17,14 @@ import { DummyComponent } from './components/dummy/dummy.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
   declarations: [AppComponent,DummyComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,SharedModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,SharedModule, HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
