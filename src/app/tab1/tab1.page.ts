@@ -7,6 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Page implements  OnInit {
  
+  selectedProducts = [
+  {
+    id:1,
+    name: "CHUWI 2019 Hipad LTE MTK6797 X27 Deca Core Android 8.0 3GB",
+    imgUrl: "https://cdn.akakce.com/xiaomi/xiaomi-redmi-8-64gb-z.jpg",
+    categoryId:1,
+    price:14.99,
+  }, 
+  {
+    id:1,
+    name: "CHUWI 2019 Hipad LTE MTK6797 X27 Deca Core Android 8.0 3GB",
+    imgUrl: "https://cdn.akakce.com/xiaomi/xiaomi-redmi-8-64gb-z.jpg",
+    categoryId:1,
+    price:14.99,
+  }, 
+];
+
 
   itemSizes = [
     'S',
@@ -15,6 +32,12 @@ export class Tab1Page implements  OnInit {
     'X'
   ];
 
+
+   selectedCategories = [
+      'Clothing',
+      'Shoes',
+      'Books',
+  ];
   
   items = [
   {
@@ -23,7 +46,6 @@ export class Tab1Page implements  OnInit {
     imgUrl: "https://cdn.akakce.com/xiaomi/xiaomi-redmi-8-64gb-z.jpg",
     categoryId:1,
     price:14.99,
-
   }, 
   {
     id:2,
@@ -91,6 +113,10 @@ export class Tab1Page implements  OnInit {
 
    
 
+  }
+
+  segmentChanged(ev: any) {
+    console.log('Segment changed', ev);
   }
 
 

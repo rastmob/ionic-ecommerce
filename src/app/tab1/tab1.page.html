@@ -33,7 +33,37 @@
 
 
  <app-progress-loader [numberOfRows]="6" *ngIf="!items"></app-progress-loader>
- <div class="container">
+
+  <ion-card class="welcome-card">
+  <ion-segment scrollable (ionChange)="segmentChanged($event)">
+    <ion-segment-button *ngFor="let selected of selectedCategories">
+      {{selected}}
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-card>
+
+  <div class="container">
+
+ <!--  <ion-slides>
+    <ion-slide *ngFor="let selectedProduct of selectedProducts">
+      <ion-col size="8">
+        <app-media-skeleton [src]="selectedProduct?.imgUrl" [className]="animationClass"  [ngStyle]="{'animation-delay':(i + 1) * 0.2+'s'}"
+      ></app-media-skeleton>
+          <p class="productTitle">{{selectedProduct?.name}}</p>
+          <div class="box">
+              <p class="price">${{selectedProduct?.price}}</p>
+              <button ion-button  icon-only (click)="addToCard(category)">
+                <ion-icon name="cart" color="primary"></ion-icon>
+              </button>
+              <button ion-button icon-only class="ion-float-right" (click)="addToCard(category)">
+                <ion-icon name="md-arrow-dropright-circle" color="secondary"></ion-icon>
+              </button>
+          </div>
+    </ion-col>
+  </ion-slide>
+  </ion-slides> -->
+
  <ion-row class="row">
  <ion-col size="4" *ngFor="let item of items;let i=index" routerLink="/product/product-details/{{item?.id}}">
 <div>
