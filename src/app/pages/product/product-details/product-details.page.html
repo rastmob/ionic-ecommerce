@@ -4,26 +4,25 @@
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>{{productDetail.name}}</ion-title>
+    <ion-title> {{(productDetail | async)?.name}}</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card class="welcome-card">
-
-    <app-media-skeleton *ngIf="!productDetail.imgUrl" class="slide-skeleton"></app-media-skeleton>
+ <ion-card class="welcome-card">
+   
     <ion-slides pager="true">
-      <ion-slide *ngFor="let product of productDetail.imgUrl">
-
-        <img [src]="product.imgSrc" />
+      <ion-slide *ngFor="let product of (productDetail | async)?.imgUrl">
+        <img [src]="product" />
       </ion-slide>
     </ion-slides>
   </ion-card>
 
   <ion-card class="welcome-card">
+   
     <ion-card-header>
-      <ion-card-subtitle>{{productDetail.name}}</ion-card-subtitle>
+      <ion-card-subtitle>{{(productDetail | async)?.name}}</ion-card-subtitle>
     </ion-card-header>
     <ion-row class="ion-text-center">
       <ion-col size="6" class="ion-no-padding">
@@ -65,7 +64,7 @@
     <ion-card-header>
       <ion-card-subtitle>Description</ion-card-subtitle>
     </ion-card-header>
-    <ion-card-content>{{productDetail.description}}</ion-card-content>
+    <ion-card-content>{{(productDetail | async)?.description}}</ion-card-content>
   </ion-card>
 
     <ion-fab>
@@ -78,10 +77,10 @@
 <ion-footer>
   <ion-row class="ion-text-center">
     <ion-col size="6" class="ion-no-padding">
-      <ion-button expand="full" color="primary" (click)="addToCart(productDetail.id)">Add to Cart</ion-button>
+      <ion-button expand="full" color="primary" (click)="addToCart(1)">Add to Cart</ion-button>
     </ion-col>
     <ion-col size="6" class="ion-no-padding">
-      <ion-button expand="full" color="secondary" (click)="buyNow(productDetail.id)">Buy Now</ion-button>
+      <ion-button expand="full" color="secondary" (click)="buyNow(1)">Buy Now</ion-button>
     </ion-col>
   </ion-row>
 </ion-footer>
