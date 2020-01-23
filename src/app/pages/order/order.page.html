@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
 
-    <ion-title> {{(productDetail | async)?.name}}</ion-title>
+    <ion-title> My Orders</ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -12,26 +12,28 @@
 <ion-content>
 
 
-<ion-card  class="welcome-card" *ngFor="let order of orders | async">
+<ion-card  class="welcome-card" *ngFor="let order of orders | async"  routerLink="/order/order-detail/{{order?.id}}">
+  <ion-card-content >
 
+    <ion-row class="ion-text-center">
+      <ion-col size="4" class="ion-no-padding">
+        <ion-slides pager="true">
+          <ion-slide *ngFor="let product of order?.imgUrl">
+            <img [src]="product" />
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+      <ion-col size="8" class="ion-no-padding">
+        <ion-text color="secondary">
+          <p>{{order.name}}</p>
+          <p>{{order.orderDate}}</p>
+          <p>{{order.orderNo}}</p>
+        </ion-text>
+        
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
 
-  <ion-row class="ion-text-center">
-    <ion-col size="4" class="ion-no-padding">
-      <ion-slides pager="true">
-        <ion-slide *ngFor="let product of order?.imgUrl">
-          <img [src]="product" />
-        </ion-slide>
-      </ion-slides>
-    </ion-col>
-    <ion-col size="8" class="ion-no-padding">
-      <ion-text color="secondary">
-        <p>{{order.name}}</p>
-        <p>{{order.orderDate}}</p>
-        <p>{{order.orderNo}}</p>
-      </ion-text>
-      
-    </ion-col>
-  </ion-row>
 
 
 </ion-card>

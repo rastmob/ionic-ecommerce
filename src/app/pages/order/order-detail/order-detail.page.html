@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="order"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title> Order Detail </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+         Order No
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.orderNo}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+         Order Date
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.orderDate}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+         Quantity
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.quantity}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+        Product Name
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.name}}
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <div>
+       Status
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+        {{(orderDetail | async)?.status}}
+        </div>
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row>
+      <ion-col>
+        <div>
+        Total
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.total}}
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <div>
+        Address
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.address}}
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row>
+      <ion-col>
+        <div>
+        Description
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          {{(orderDetail | async)?.description}}
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
