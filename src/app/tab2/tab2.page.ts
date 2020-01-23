@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoryService } from '../states/services/category.service';
 
 @Component({
   selector: 'app-tab2',
@@ -9,26 +10,10 @@ export class Tab2Page implements OnInit {
 
   categories: any;
 
-  constructor() {}
+  constructor(private categoryService:CategoryService) {}
   
   ngOnInit(){
-    this.categories = [
-      'Clothing',
-      'Shoes',
-      'Consumer Electronics',
-      'Books',
-      'Cosmetics & Body care',
-      'Food & Drinks',
-      'Furniture',
-      'Sports & Outdoor',
-      'Toys',
-      'Baby Products',
-      'Garden & pets',
-      'Shoes',
-      'Consumer Electronics',
-      'Sports & Outdoor',
-      'Cosmetics & Body care',
-  ];
+    this.categories = this.categoryService.getCategories();
   }
 
 
