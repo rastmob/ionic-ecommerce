@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 const STORAGE_ID = 'cart';
 @Injectable({
     providedIn: 'root'
 })
 export class StorageService {
 
-    constructor(public storage: Storage) { }
+    constructor(public storage: Storage, private http:HttpClient) { }
 
     isAddedCard(productId) {
       return this.getCard().then(result => {
@@ -37,6 +39,12 @@ export class StorageService {
   
     getCard() {
       return this.storage.get(STORAGE_ID);
+    }
+
+
+    getAllBagItems(): Observable<any>{
+      let url = './assets/bag.json';
+      return this.http.get(url);
     }
 
 }

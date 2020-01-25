@@ -8,6 +8,43 @@
 
 <ion-content>
 
-  <app-progress-loader [numberOfRows]="6" *ngIf="!items"></app-progress-loader>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let bag of bags | async">
+    <ion-item>
+    <ion-card>
+      <ion-checkbox color="primary" checked> </ion-checkbox>
+      <ion-card-header>
+        <ion-card-subtitle> {{bag.name}}</ion-card-subtitle>
+        <ion-card-title>  <app-media-skeleton [src]="bag?.imgUrl[0]"   [ngStyle]="{'animation-delay':(i + 1) * 0.2+'s'}"
+          ></app-media-skeleton></ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-row class="row">
+          <ion-col size="6">
+          <ion-button (clickk)="updateCount()">+</ion-button>
+          <p>{{bag.quantity}}</p>
+          <ion-button (clickk)="updateCount()">-</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          {{bag.description  | slice:0:120}}
+        </ion-col>
+      </ion-row>
+      </ion-card-content>
+    </ion-card>
+    </ion-item>
+    
+        
+
+    
+    <ion-item-options  side="end">
+
+      <ion-item-option color="danger" (click)="unread(item)">Delete</ion-item-option>
+    </ion-item-options>
+
+    
+  </ion-item-sliding>
+</ion-list>
 
 </ion-content>

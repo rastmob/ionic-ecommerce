@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from '../states/services/storage.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,6 +8,16 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(private storageService:StorageService) {}
+  bags;
 
+  ngOnInit(){
+    this.bags = this.storageService.getAllBagItems();
+  }
+
+
+
+  updateCount(){
+    
+  }
 }
