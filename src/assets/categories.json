@@ -1,25 +1,25 @@
 [
     {
         "id": 1,
-        "name": "Women",
+        "name": "xLarge",
         "imgUrl": "/assets/1-1.jfif",
         "description":"Women lorem ipsum dolor sit amet"
     },
     {
         "id": 2,
-        "name": "Men",
+        "name": "Large",
         "imgUrl":"/assets/2-1.jfif",
         "description":"Men lorem ipsum dolor sit amet"
     },
     {
         "id": 3,
-        "name": "Kids",
+        "name": "Fit",
         "imgUrl": "/assets/3-1.jfif",
         "description":"Kids lorem ipsum dolor sit amet"
     },
     {
         "id": 4,
-        "name": "Student",
+        "name": "Small",
         "imgUrl": "/assets/4-1.jfif",
         "description":"Student lorem ipsum dolor sit amet"
     }

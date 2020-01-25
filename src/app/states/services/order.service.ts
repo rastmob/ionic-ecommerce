@@ -10,11 +10,12 @@ export class OrderService {
 
   constructor(private http:HttpClient) { }
 
+
+
   getOrderDetails(productId:number): Observable<any>{
     let url = './assets/order.json';
      return this.http.get(url).pipe(
-      map( arr => arr.find( r => r.id === productId))
-      )
+      map( data => data.find( r => r.id === productId)))
   } 
 
   getAllOrders(): Observable<any>{

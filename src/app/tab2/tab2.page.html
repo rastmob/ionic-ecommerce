@@ -1,44 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Categories
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
   <app-progress-loader [numberOfRows]="8" *ngIf="!categories"></app-progress-loader>
 
 
-  <!-- 
-  <ion-list>
-    <ion-item-sliding *ngFor="let category of categories">
-        <ion-item>
-            {{category}}
-        </ion-item>
-        <ion-item-options>
-            <button ion-button icon-only (click)="addToCard(category)">
-                <ion-icon name="cart" color="primary"></ion-icon>
-            </button>
-            <button ion-button icon-only (click)="viewDetail(category)">
-                <ion-icon name="paper" color="secondary"></ion-icon>
-            </button>
-        </ion-item-options>
-
-    </ion-item-sliding>
-</ion-list> -->
-
 <ion-grid>
   <ion-row>
     <ion-col size="12" *ngFor="let category of categories | async" >
-      <div class="hero slide-up" style="height: 175px;" [style.background]="'url('+category.imgUrl+')'">
+      <div class="hero" style="height: 175px;" [style.background]="'url('+category.imgUrl+')'">
         <span>{{category.name}}</span>
    </div>
     </ion-col>
   </ion-row>
   
-</ion-grid>
+</ion-grid> 
+<!-- <ion-list>
+  <ion-item-sliding *ngFor="let category of categories | async">
+      <ion-item-options>
+          <button ion-button icon-only (click)="addToCard(category)">
+              <ion-icon name="cart" color="primary"></ion-icon>
+          </button>
+          <button ion-button icon-only (click)="viewDetail(category)">
+              <ion-icon name="paper" color="secondary"></ion-icon>
+          </button>
+      </ion-item-options>
 
+  </ion-item-sliding>
+</ion-list> -->
 
 
 </ion-content>
