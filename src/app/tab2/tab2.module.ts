@@ -12,7 +12,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule,
-    RouterModule.forChild([{ path: '', component: Tab2Page }])
+    RouterModule.forChild([{ path: '', component: Tab2Page },  {
+      path: 'category/:id',
+      loadChildren: () => import('./category/category.module').then( m => m.CategoryPageModule)
+    }])
   ],
   declarations: [Tab2Page]
 })

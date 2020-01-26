@@ -15,7 +15,15 @@ export class ProductService {
      return this.http.get<Product[]>(url).pipe(
       map( arr => arr.find( r => r.id === productId))
       )
-  } 
+  }
+
+  getCategoryProducts(categoryId:number): Observable<any>{
+    let url = './assets/product.json';
+     return this.http.get<Product[]>(url).pipe(
+      map( arr => arr.filter( r => r.categoryId === categoryId)),
+      tap(data => console.log(data))
+      )
+  }
 
   getAllProducts(): Observable<any>{
     let url = './assets/product.json';

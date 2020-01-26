@@ -5,7 +5,7 @@
 
 <ion-grid>
   <ion-row>
-    <ion-col size="12" *ngFor="let category of categories | async" >
+    <ion-col size="12" *ngFor="let category of categories | async" routerLink="/tabs/tab2/category/{{category?.id}}">
       <div class="hero" style="height: 175px;" [style.background]="'url('+category.imgUrl+')'">
         <span>{{category.name}}</span>
    </div>

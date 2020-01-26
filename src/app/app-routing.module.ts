@@ -27,7 +27,8 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./pages/search/search.module').then( m => m.SearchPageModule)
-  },  {
+  },
+  {
     path: 'order',
     loadChildren: () => import('./pages/order/order.module').then( m => m.OrderPageModule)
   },
@@ -36,8 +37,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/basket/basket.module').then( m => m.BasketPageModule)
   },
   {
-    path: 'category-detail',
-    loadChildren: () => import('./tab2/category-detail/category-detail.module').then( m => m.CategoryDetailPageModule)
+    path: 'category',
+    loadChildren: () => import('./tab2/category/category.module').then( m => m.CategoryPageModule)
   },
 
 

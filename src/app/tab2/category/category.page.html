@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab2"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title> Category </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-row class="row">
+    <ion-col size="6" *ngFor="let item of items | async;let i=index" routerLink="/product/product-details/{{item?.id}}">
+   <div>
+   <ion-card class="ion-no-padding ion-no-margin">
+     <app-media-skeleton [src]="item?.imgUrl[0]"   [ngStyle]="{'animation-delay':(i + 1) * 0.2+'s'}"
+   ></app-media-skeleton>
+       <p class="productTitle">{{item?.name}}</p>
+       <div class="box">
+           <p>{{item?.price | currency:'USD'}}</p>
+       </div>
+   </ion-card>
+   </div>
+   </ion-col>
+   
+   
+   </ion-row>
+   </div>
+</ion-content>
