@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,10 @@ export class OrderService {
 
   getOrderDetails(productId:number): Observable<any>{
     let url = './assets/order.json';
-     return this.http.get(url).pipe(
-      map( data => data.find( r => r.id === productId)))
+     return this.http.get<any[]>(url).pipe(
+      map( data => {
+        return data.find(r => r.id === productId);
+      }))
   } 
 
   getAllOrders(): Observable<any>{
