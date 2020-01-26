@@ -71,14 +71,7 @@
 ></app-media-skeleton>
     <p class="productTitle">{{item?.name}}</p>
     <div class="box">
-        <p class="price">${{item?.price}}</p>
-        <button ion-button  icon-only (click)="addToCard(category)">
-          <ion-icon name="cart" color="primary"></ion-icon>
-        </button>
-        
-        <button ion-button icon-only class="ion-float-right" (click)="addToCard(category)">
-          <ion-icon name="md-arrow-dropright-circle" color="secondary"></ion-icon>
-        </button>
+        <p>{{item?.price | currency:'USD'}}</p>
     </div>
 </ion-card>
 </div>
