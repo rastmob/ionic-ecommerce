@@ -39,7 +39,11 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () => import('./tab2/category/category.module').then( m => m.CategoryPageModule)
+  },  {
+    path: 'payment',
+    loadChildren: () => import('./pages/payment/payment.module').then( m => m.PaymentPageModule)
   },
+
 
 
  

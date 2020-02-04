@@ -18,6 +18,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { PayPal } from '@ionic-native/paypal/ngx';
 
 
 
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    PayPal 
   ],
   bootstrap: [AppComponent]
 })

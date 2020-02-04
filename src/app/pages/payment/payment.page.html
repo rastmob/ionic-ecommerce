@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title> Payment </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/1-1.jfif"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Buy That Jacket</ion-card-subtitle>
+      <ion-row>
+        <ion-col>
+          Total Payment
+        </ion-col>
+        <ion-col>
+          {{currencyIcon}}{{paymentAmount}}
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="success" (click)="payWithPaypal()">Pay with PayPal</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

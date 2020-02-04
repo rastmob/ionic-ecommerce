@@ -31,6 +31,7 @@
     "bootstrap": "^4.1.0",
     "card.io.cordova.mobilesdk": "^2.1.0",
     "com.paypal.cordova.mobilesdk": "^3.5.0",
+    "cordova-android": "^8.1.0",
     "cordova-browser": "6.0.0",
     "cordova-sqlite-storage": "^4.0.0",
     "core-js": "^2.5.4",
@@ -85,7 +86,8 @@
       "com.paypal.cordova.mobilesdk": {}
     },
     "platforms": [
-      "browser"
+      "browser",
+      "android"
     ]
   }
 }
