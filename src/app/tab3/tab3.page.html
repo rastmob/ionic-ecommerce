@@ -16,7 +16,7 @@
       <ion-checkbox color="primary" checked> </ion-checkbox>
       <ion-card-header>
         <ion-card-subtitle> {{bag.name}}</ion-card-subtitle>
-        <ion-card-title>  <app-media-skeleton [src]="bag?.imgUrl[0]"   [ngStyle]="{'animation-delay':(i + 1) * 0.2+'s'}"
+        <ion-card-title>  <app-media-skeleton [src]="bag?.imgUrl[0]"   [ngStyle]="{'animation-delay':(1 + 1) * 0.2+'s'}"
           ></app-media-skeleton></ion-card-title>
       </ion-card-header>
     
@@ -40,7 +40,7 @@
     
     <ion-item-options  side="end">
 
-      <ion-item-option color="danger" (click)="unread(item)">Delete</ion-item-option>
+      <ion-item-option color="danger" (click)="unread(1)">Delete</ion-item-option>
     </ion-item-options>
 
     

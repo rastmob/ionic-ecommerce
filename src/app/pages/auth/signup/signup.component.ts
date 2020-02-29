@@ -9,7 +9,9 @@ import { AuthService } from 'src/app/states/services/auth.service';
 export class SignupComponent implements OnInit {
   email: string;
   password: string;
-  constructor(public authService: AuthService) { }
+  namesurname:string;
+  
+  constructor() { }
 
   ngOnInit() {}
 
@@ -17,6 +19,10 @@ export class SignupComponent implements OnInit {
    // this.authService.SignUp(this.email, this.password);
     this.email = ''; 
     this.password = '';
+  }
+
+  signOut(){
+
   }
 
 }

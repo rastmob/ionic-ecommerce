@@ -9,7 +9,8 @@ export class SearchPage implements OnInit {
 
   categories: any;
   isItemAvailable:boolean;
-
+  myInput;
+  shouldShowCancel; 
   constructor() {}
   
   ngOnInit(){
@@ -50,13 +51,18 @@ onInput(ev: any) {
  }
 }
 
-  addToCard(){
+  addToCard(id){
 
   }
 
-  viewDetail(){
+  viewDetail(id){
 
   }
+
+  onCancel(event){
+
+  }
+
 
 
 

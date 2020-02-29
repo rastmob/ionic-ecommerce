@@ -26,7 +26,7 @@ import { PayPal } from '@ionic-native/paypal/ngx';
   declarations: [AppComponent,DummyComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,SharedModule, HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireModule.initializeApp({}, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     IonicStorageModule.forRoot()],

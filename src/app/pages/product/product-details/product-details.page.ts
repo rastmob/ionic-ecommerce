@@ -65,7 +65,7 @@ export class ProductDetailsPage implements OnInit {
     cartItem.size = this.setSize;
   }
 
-  buyNow() {
+  buyNow(item) {
 
   }
 
@@ -74,4 +74,7 @@ export class ProductDetailsPage implements OnInit {
     this.setSize = itemSize;
   }
 
+  onSelect(itemSize){
+
+  }
 }

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class AuthService {
   private user: Observable<firebase.User>;
-  private userData: firebase.User = null;
+  public userData: firebase.User = null;
 
   constructor(private angularFireAuth: AngularFireAuth, private router: Router) {
       this.user = angularFireAuth.authState;
